@@ -6,8 +6,16 @@ import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlin
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import {
+  useDarkModeDispatch,
+  useDarkMode,
+} from "../../context/darkModeContext";
 
 const Navbar = () => {
+  const dispatch = useDarkModeDispatch();
+  const { darkMode } = useDarkMode();
+
   return (
     <div className="Navbar">
       <div className="wrapper">
@@ -21,7 +29,19 @@ const Navbar = () => {
             English
           </div>
           <div className="item">
-            <DarkModeOutlinedIcon className="icon" />
+            {darkMode ? (
+              <DarkModeOutlinedIcon
+                className="icon"
+                style={{ cursor: "pointer" }}
+                onClick={() => dispatch({ type: "TOGGLE" })}
+              />
+            ) : (
+              <WbSunnyIcon
+                className="icon"
+                style={{ cursor: "pointer" }}
+                onClick={() => dispatch({ type: "TOGGLE" })}
+              />
+            )}
           </div>
           <div className="item">
             <FullscreenExitOutlinedIcon className="icon" />
