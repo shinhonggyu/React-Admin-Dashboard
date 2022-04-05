@@ -5,7 +5,7 @@ export const userColumns = [
     width: 70,
   },
   {
-    field: "user",
+    field: "username",
     headerName: "User",
     width: 230,
     renderCell: (params) => {
@@ -116,7 +116,7 @@ export const userRows = [
   },
   {
     id: 10,
-    username: "Roxie",
+    username: "Shin",
     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "snow@gmail.com",
     status: "active",
